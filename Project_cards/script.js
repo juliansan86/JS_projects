@@ -20,8 +20,26 @@ document.addEventListener('DOMContentLoaded', function () {
         styleBtn.insertAdjacentElement('afterend', deleteBtn);
     }
 
-    // Añadir botón eliminar a las tarjetas existentes
-    document.querySelectorAll('.card').forEach(addDeleteButton);
+    function addStyleButtonEvent(card) {
+        const styleBtn = card.querySelector('.card__button--style');
+        styleBtn.onclick = function () {
+            // Paleta de colores posibles
+            const colors = ['#1186fa', '#2ecc71', '#e67e22', '#9b59b6', '#e74c3c', '#16a085', '#f39c12'];
+            // Elige un color aleatorio diferente al actual
+            let currentColor = card.style.backgroundColor || window.getComputedStyle(card).backgroundColor;
+            let newColor;
+            do {
+                newColor = colors[Math.floor(Math.random() * colors.length)];
+            } while (newColor === currentColor);
+            card.style.backgroundColor = newColor;
+        };
+    }
+
+    // Añadir botón eliminar y evento de cambiar estilo a las tarjetas existentes
+    document.querySelectorAll('.card').forEach(card => {
+        addDeleteButton(card);
+        addStyleButtonEvent(card);
+    });
 
     // Lógica para agregar nuevas tarjetas
     document.querySelector('.add-card__button').addEventListener('click', function () {
@@ -30,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const newCard = cardTemplate.cloneNode(true);
         newCard.querySelector('.card__header').textContent = 'Nuevo Usuario';
         addDeleteButton(newCard);
+        addStyleButtonEvent(newCard);
         cardsContainer.appendChild(newCard);
     });
 });
