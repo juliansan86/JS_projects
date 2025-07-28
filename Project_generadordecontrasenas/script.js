@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const input = document.querySelector('.password-generator__input');
     const copyBtn = document.querySelector('.password-generator__copy');
     const lengthSlider = document.getElementById('length-slider');
@@ -11,19 +11,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.password-generator__form');
 
     // Actualiza el valor visual de la longitud
-    lengthSlider.addEventListener('input', function () {
+    lengthSlider.addEventListener('input', () => {
         lengthValue.textContent = lengthSlider.value;
     });
 
     // Copiar contraseña al portapapeles
-    copyBtn.addEventListener('click', function () {
+    copyBtn.addEventListener('click', () => {
         navigator.clipboard.writeText(input.value);
         copyBtn.classList.add('copied');
         setTimeout(() => copyBtn.classList.remove('copied'), 800);
     });
 
     // Genera la contraseña según los parámetros
-    function generatePassword() {
+    const generatePassword = () => {
         let chars = '';
         if (lowercase.checked) chars += 'abcdefghijklmnopqrstuvwxyz';
         if (uppercase.checked) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
             password += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         return password;
-    }
+    };
 
     // Evento para crear la contraseña
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', e => {
         e.preventDefault();
         input.value = generatePassword();
     });
