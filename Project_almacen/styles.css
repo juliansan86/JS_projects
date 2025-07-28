@@ -1,0 +1,69 @@
+body {
+  background: #eaf1fa;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.warehouse {
+  width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+.warehouse__boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(2, 60px);
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.box {
+  width: 60px;
+  height: 60px;
+  background: #f5f5f5;
+  border: 2px solid #222;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #aaa;
+  cursor: grab;
+  transition: box-shadow 0.2s;
+}
+.box:active {
+  cursor: grabbing;
+}
+.warehouse__grid {
+  background: #e0e5ea;
+  border: 2px solid #222;
+  border-radius: 8px;
+  padding: 32px 0 16px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(4, 70px);
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.warehouse__slot {
+  width: 70px;
+  height: 70px;
+  background: #d3d8dd;
+  border: 2px solid #888;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #aaa;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+.warehouse__slot.occupied {
+  box-shadow: none;
+  background: #d3d8dd;
+}
+.warehouse__slot .box {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  box-shadow: none;
+}
+.warehouse__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 16px;
+}
