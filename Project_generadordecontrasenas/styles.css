@@ -1,0 +1,312 @@
+/*
+    styles.css - Generador de contraseñas
+    Estructura y estilos con metodología BEM
+*/
+body {
+    /* Estilos generales de la página */
+    background: #eaf1fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.password-generator {
+    /* Contenedor principal del generador de contraseñas */
+    background: #f3f7fc;
+    max-width: 480px;
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    padding: 32px 32px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.password-generator__title {
+    /* Título principal */
+    color: #8f9090;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.password-generator__output {
+    /* Contenedor del input y botón de copiar */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.password-generator__input {
+    /* Input donde se muestra la contraseña generada */
+    flex: 1;
+    font-size: 1.6rem;
+    padding: 16px;
+    border-radius: 8px 0 0 8px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 2px 8px #e0e5ea;
+    outline: none;
+    height: 56px;
+    padding: 0 16px;
+}
+
+.password-generator__copy {
+    /* Botón para copiar la contraseña al portapapeles */
+    background: #fff;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    padding: 0 18px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 8px #e0e5ea;
+    transition: background 0.2s;
+    height: 56px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.password-generator__icon {
+    /* Icono de copiar (FontAwesome) alineado al input */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    font-size: 1.6rem;
+}
+
+.password-generator__copy:hover {
+    /* Efecto hover para el botón de copiar */
+    background: #eaf1fa;
+}
+
+.password-generator__form {
+    /* Formulario de opciones y botón de crear contraseña */
+    width: 100%;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.password-generator__slider {
+    /* Barra de longitud de la contraseña (slider) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #1c1a1a;
+    border-radius: 0.2rem;
+    height: 0.8rem;
+    width: 100%;
+    margin-bottom: 3rem;
+    margin-top: 12px;
+    border: none;
+    display: block;
+}
+
+/* Thumb para Chrome, Edge, Safari */
+.password-generator__slider::-webkit-slider-thumb {
+    /* Estilo del thumb del slider para Chrome, Edge, Safari */
+    -webkit-appearance: none;
+    appearance: none;
+    background: black;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s;
+}
+
+/* Thumb para Firefox */
+.password-generator__slider::-moz-range-thumb {
+    /* Estilo del thumb del slider para Firefox */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: black;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s;
+}
+
+/* Thumb para IE */
+.password-generator__slider::-ms-thumb {
+    /* Estilo del thumb del slider para IE */
+    /* Contenedor de la barra y valor de longitud */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: black;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s;
+}
+
+.password-generator__length-bar {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.password-generator__length {
+    /* Fila con el label y el valor de longitud */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.password-generator__label {
+    /* Label de la longitud */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1186fa;
+}
+
+.password-generator__value {
+    /* Valor visual de la longitud (azul y grande) */
+    font-size: 1.3rem;
+    color: #1186fa;
+    font-weight: bold;
+}
+
+.password-generator__slider {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    background: #222;
+    height: 8px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 12px;
+}
+
+/* Estilo para el thumb (navegadores Webkit: Chrome, Edge, Safari) */
+.password-generator__slider::-webkit-slider-thumb {
+    width: 32px;
+    height: 32px;
+    background: #111;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.password-generator__slider:focus::-webkit-slider-thumb {
+    background: #1186fa;
+}
+
+/* Firefox */
+.password-generator__slider::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+    background: #111;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.password-generator__slider:focus::-moz-range-thumb {
+    background: #1186fa;
+}
+
+.password-generator__slider::-ms-thumb {
+    width: 32px;
+    height: 32px;
+    background: #111;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.password-generator__slider:focus::-ms-thumb {
+    background: #1186fa;
+}
+
+/* Track para Firefox */
+.password-generator__slider::-moz-range-track {
+    background: #222;
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* Track para IE */
+.password-generator__slider::-ms-fill-lower,
+.password-generator__slider::-ms-fill-upper {
+    background: #222;
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* Quitar borde en Firefox */
+.password-generator__slider {
+    border: none;
+}
+
+/* Valor azul */
+.password-generator__value {
+    font-size: 1.3rem;
+    color: #2980d9;
+    font-weight: bold;
+}
+
+/* Contenedor de las opciones de tipo de caracteres */
+.password-generator__options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+/* Cada opción de tipo de carácter */
+.password-generator__option {
+    font-size: 1.1rem;
+    color: #1186fa;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Checkbox de cada opción */
+.password-generator__checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #1186fa;
+}
+
+.password-generator__button {
+    background: #16a085;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 0;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+/* Efecto hover para el botón de crear */
+.password-generator__button:hover {
+    background: #1186fa;
+}

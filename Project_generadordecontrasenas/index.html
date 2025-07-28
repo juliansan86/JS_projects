@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Contraseñas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-6.1.2-web/css/all.min.css">
+</head>
+<body>
+    <div class="password-generator">
+        <h1 class="password-generator__title">Correo temporal</h1>
+        <div class="password-generator__output">
+            <input type="text" class="password-generator__input" readonly value="eF2*i" />
+            <button class="password-generator__copy" title="Copiar">
+                <span class="password-generator__icon"><i class="fa-solid fa-paste"></i></span>
+            </button>
+        </div>
+        <form class="password-generator__form">
+            <div class="password-generator__length-bar">
+                <div class="password-generator__length">
+                    <label class="password-generator__label">Longitud</label>
+                    <span class="password-generator__value" id="length-value">5</span>
+                </div>
+                <input type="range" min="5" max="20" value="5" class="password-generator__slider" id="length-slider">
+            </div>
+            <div class="password-generator__options">
+                <label class="password-generator__option">
+                    <input type="checkbox" checked class="password-generator__checkbox" id="lowercase"> Con letras en minúscula
+                </label>
+                <label class="password-generator__option">
+                    <input type="checkbox" checked class="password-generator__checkbox" id="uppercase"> Con letras en mayúscula
+                </label>
+                <label class="password-generator__option">
+                    <input type="checkbox" checked class="password-generator__checkbox" id="numbers"> Con números
+                </label>
+                <label class="password-generator__option">
+                    <input type="checkbox" checked class="password-generator__checkbox" id="symbols"> Con símbolos
+                </label>
+            </div>
+            <button type="submit" class="password-generator__button">CREAR</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
