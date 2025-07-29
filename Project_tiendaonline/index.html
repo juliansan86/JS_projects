@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tienda Online - Carrito</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-6.1.2-web/css/all.min.css" />
+</head>
+
+<body>
+    <!-- index.html - Tienda Online con Carrito -->
+    <!-- Estructura principal de la tienda y el carrito -->
+    <main class="shop">
+        <!-- Sección de productos disponibles en la tienda -->
+        <section class="shop__products">
+            <!-- Producto individual -->
+            <div class="product" data-id="1">
+                <img src="img/product-1.jpg" alt="Camiseta" class="product__img" />
+                <div class="product__info">
+                    <h2 class="product__name">Camiseta</h2>
+                    <span class="product__price">14.99€</span>
+                </div>
+                <button class="product__add">Comprar</button>
+            </div>
+            <!-- Fin del producto individual -->
+            <!-- Repetir para más productos -->
+            <div class="product" data-id="2">
+                <img src="img/product-2.jpg" alt="Camara" class="product__img" />
+                <div class="product__info">
+                    <h2 class="product__name">Camara</h2>
+                    <span class="product__price">49.99€</span>
+                </div>
+                <button class="product__add">Comprar</button>
+            </div>
+            <div class="product" data-id="3">
+                <img src="img/product-3.jpg" alt="Portatil" class="product__img" />
+                <div class="product__info">
+                    <h2 class="product__name">Portatil</h2>
+                    <span class="product__price">499.99€</span>
+                </div>
+                <button class="product__add">Comprar</button>
+            </div>
+            <div class="product" data-id="4">
+                <img src="img/product-4.jpg" alt="Zapatillas" class="product__img" />
+                <div class="product__info">
+                    <h2 class="product__name">Zapatillas</h2>
+                    <span class="product__price">29.99€</span>
+                </div>
+                <button class="product__add">Comprar</button>
+            </div>
+            <!-- Fin de la repetición de productos -->
+        </section>
+        <!-- Fin de la sección de productos -->
+
+        <!-- Carrito de compras -->
+        <aside class="cart cart--hidden">
+            <!-- Cabecera del carrito -->
+            <div class="cart__header">
+                <span class="cart__title">Mi carrito</span>
+                <button class="cart__close">×</button>
+            </div>
+            <!-- Contenedor de los items del carrito -->
+            <div class="cart__items"></div>
+            <!-- Pie del carrito con el total y botón de compra -->
+            <div class="cart__footer">
+                <div class="cart__total">
+                    Total <span class="cart__total-value">0.00€</span>
+                </div>
+                <button class="cart__buy">Comprar Todo</button>
+            </div>
+        </aside>
+        <!-- Fin del carrito de compras -->
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
